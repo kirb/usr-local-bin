@@ -1,0 +1,6 @@
+#!/bin/bash
+# Display line of file
+# By Ad@m <http://hbang.ws>
+# Licensed under the MIT License <http://adam.mit-license.org>
+# Usage: line <file> <line>
+/bin/grep -n "" "$1"|/bin/grep -E --color "^$2:"

@@ -1,0 +1,9 @@
+#!/bin/bash
+# Google command line search shortcut
+# By Ad@m <http://hbang.ws>
+# Licensed under the MIT License <http://adam.mit-license.org>
+OPENER=echo
+[[ -f "/usr/bin/open" ]]&&OPENER=/usr/bin/open
+[[ -f "/usr/bin/openurl" ]]&&OPENER=/usr/bin/openurl
+[[ -f "/usr/bin/sbopenurl" ]]&&OPENER=/usr/bin/sbopenurl
+$OPENER "http://www.google.com/search?q=$*"
