@@ -1,0 +1,5 @@
+#!/bin/bash
+# Respring/safe mode shortcut
+# By Ad@m <http://hbang.ws>
+# Licensed under the MIT License <http://adam.mit-license.org>
+[[ "$1" == "-s" ]]&&killall -ABRT SpringBoard||killall SpringBoard
