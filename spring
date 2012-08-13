@@ -5,7 +5,7 @@
 # Usage: spring [-s|-l]
 #   s = safe mode; l = non-locking ("changing language") respring
 if [[ "$1" == "-s" ]]; then
-	killall -ABRT SpringBoard;
+	killall -ABRT SpringBoard
 elif [[ "$1" == "-l" ]]; then
 	if [[ ! -f "/usr/bin/cycript" ]]; then
 		echo "spring: cycript required for language respring">&2
