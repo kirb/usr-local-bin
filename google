@@ -2,8 +2,20 @@
 # Google command line search shortcut
 # By Ad@m <http://hbang.ws>
 # Licensed under the MIT License <http://adam.mit-license.org>
-OPENER=echo
-[[ -f "/usr/bin/open" ]]&&OPENER=/usr/bin/open
-[[ -f "/usr/bin/openurl" ]]&&OPENER=/usr/bin/openurl
-[[ -f "/usr/bin/sbopenurl" ]]&&OPENER=/usr/bin/sbopenurl
-$OPENER "http://www.google.com/search?q=$*"
+
+opener="oops"
+
+if [[ -f "/usr/bin/sbopenurl" ]]; then
+	opener=/usr/bin/sbopenurl
+elif [[ -f "/usr/bin/openurl" ]]; then
+	opener=/usr/bin/openurl
+elif [[ -f "/usr/bin/open" ]]; then
+	opener=/usr/bin/open
+elif [[ -f "/usr/bin/lynx" ]]; then
+	opener=/usr/bin/lynx
+else
+	echo "Oops, I couldn't find a command that allows me to open a browser." >&2
+	exit 1
+fi
+
+$opener "http://www.google.com/search?q=$*"
