@@ -1,8 +1,10 @@
 #!/bin/bash
-# GPL <http://hbang.ws/s/gpl>
+# Debian package transfer and install script
+# By Adam D <http://adam.hbang.ws>
+# Licensed under the GPLv3 <http://hbang.ws/s/gpl>
 
 if [[ "$@" == "" || "$1" == "" ]]; then
-	echo "Usage: $(basename "$0") the.deb deviceip"
+	echo "Usage: $(basename "$0") the.deb [deviceip]"
 	echo "Default IP is your \$THEOS_DEVICE_IP, which is currently \"$THEOS_DEVICE_IP\"."
 	exit 1
 elif [[ ! -f "$1" ]]; then
