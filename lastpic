@@ -14,5 +14,5 @@ else
 	lastplist=/var/mobile/Media/PhotoData/MISC/DCIM_APPLE.plist
 	IFS=' ' read -r lastdir lastfile < <(ssh root@"$ip" "plutil -key DCIMLastDirectoryNumber \"$lastplist\" && plutil -key DCIMLastFileNumber \"$lastplist\"" | tr $'\n' ' ')
 
-	scp root@"$ip":/var/mobile/Media/DCIM/${lastdir}APPLE/IMG_${lastfile}.* . || exit 2
+	scp root@"$ip":/var/mobile/Media/DCIM/"$lastdir"APPLE/IMG_$(printf "%04d" "$lastfile").* . || exit 2
 fi
